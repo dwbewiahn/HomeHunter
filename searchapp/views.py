@@ -6,5 +6,5 @@ from django.views import View
 
 class HomeView(View):
     def get(self, request):
-        return HttpResponse('Welcome to Home Hunter!')
+        return HttpResponse('Voce esta na pagina de procura')
 
