@@ -15,3 +15,10 @@ class SearchFilter(models.Model):
 class NotifiedAd(models.Model):
     search_filter = models.ForeignKey(SearchFilter, on_delete=models.CASCADE)
     ad_id = models.CharField(max_length=100, unique=True)
+
+class City(models.Model):
+    name = models.CharField(max_length=200)
+    olx_code = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
