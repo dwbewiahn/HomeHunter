@@ -1,4 +1,7 @@
 from pathlib import Path
+from celery.schedules import crontab
+
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -17,7 +20,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'searchapp',
     'api',
-    'rest_framework'
+    'rest_framework',
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -86,3 +91,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'search'
 AUTH_USER_MODEL = 'searchapp.CustomUser'
 
+CELERY_BEAT_SCHEDULE = {
+    'search_apartments_every_5_minutes': {
+        'task': 'HomeHunter.tasks.search_apartments',
+        'schedule': crontab(minute='*/5'),
+    },
+}
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'

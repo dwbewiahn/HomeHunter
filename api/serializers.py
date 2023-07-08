@@ -15,7 +15,7 @@ class CitySerializer(serializers.ModelSerializer):
 class SearchFilterSerializer(serializers.ModelSerializer):
     class Meta:
         model = SearchFilter
-        fields = ['id', 'user', 'city', 'typology', 'price_min', 'price_max', 'search_range', 'notify_by_phone']
+        fields = ['id', 'user', 'city_code', 'typology', 'price_min', 'price_max', 'search_range', 'notify_by_phone']
 
 class NotifiedAdSerializer(serializers.ModelSerializer):
     class Meta:
