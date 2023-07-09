@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Box, Typography, Select, MenuItem, TextField, FormControl, InputLabel, Checkbox, FormControlLabel, Button } from '@mui/material';
+import { Box, Typography, Select, MenuItem, FormControl, InputLabel} from '@mui/material';
 
 const SearchPage = () => {
   return (

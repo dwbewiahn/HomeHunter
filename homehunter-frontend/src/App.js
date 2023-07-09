@@ -1,6 +1,10 @@
 import React from 'react';
-import HomePage from './pages/HomePage';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import SearchPage from './pages/SearchPage';
+import RegisterPage from './pages/RegisterPage';
+
 
 const theme = createTheme({
   palette: {
@@ -20,7 +24,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <HomePage />
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Routes>
+        </Router>
       </div>
     </ThemeProvider>
   );

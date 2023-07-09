@@ -17,7 +17,7 @@ const HomePage = () => {
                 <img src={homeImage} alt="Home" />
             </div>
         </div>
-        <Footer />
+        <Footer /> 
         </div>      
     );
 };
