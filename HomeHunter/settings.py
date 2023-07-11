@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'searchapp',
     'api',
     'rest_framework',
+    'corsheaders',
     
     
 ]
@@ -33,6 +34,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'HomeHunter.urls'
@@ -100,3 +103,5 @@ CELERY_BEAT_SCHEDULE = {
 
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
+CORS_ALLOW_ALL_ORIGINS = True

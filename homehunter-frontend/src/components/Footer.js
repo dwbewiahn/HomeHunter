@@ -10,7 +10,7 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               Explore
             </Typography>
-            <Link href="#" color="inherit" underline="none">
+            <Link href="/" color="inherit" underline="none">
               Home
             </Link>
             <br />
