@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
+from knox.models import AuthToken
 import json
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 
 from rest_framework import viewsets
 from searchapp.models import CustomUser, City, SearchFilter, NotifiedAd
@@ -33,7 +35,8 @@ def login_view(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return JsonResponse({"status": "success"}, status=200)
+            token = AuthToken.objects.create(user)[1]
+            return JsonResponse({"status": "success", "token": token}, status=200)
         else:
             return JsonResponse({"error": "Login failed"}, status=400)
     else:
@@ -54,3 +57,12 @@ def register_view(request):
         return JsonResponse({"status": "success"}, status=200)
     else:
         return JsonResponse({"error": "Invalid request"}, status=400)
+    
+@login_required
+def current_user(request):
+    user = request.user
+    return JsonResponse({
+        'id': user.id,
+        'username': user.username,
+        'email': user.email,
+    })

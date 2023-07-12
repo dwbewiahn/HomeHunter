@@ -13,7 +13,8 @@ const RegisterPage = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [registrationMessage, setRegistrationMessage] = useState('');
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,21 +27,21 @@ const RegisterPage = () => {
       alert('Passwords do not match.');
       return;
     }
+
     try {
-      const response = await axios.post('http://localhost:8000/api/register/', {
+      const registerResponse = await axios.post('http://localhost:8000/api/register/', {
         username,
         email,
         password,
         phone_number: phoneNumber,
       });
-      console.log(response.data);
-      setRegistrationMessage('Registration successful!');
-      setTimeout(() => {
-        navigate('/search');
-      }, 2000);
+      console.log(registerResponse.data);
+      alert('Please Log in');
+      navigate('/');
       
     } catch (error) {
       console.error('Error registering:', error);
+      
     }
   };
 
@@ -61,7 +62,7 @@ const RegisterPage = () => {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <TextField
+           <TextField
             margin="dense"
             id="email"
             label="Email Address"

@@ -15,6 +15,7 @@ const LoginDialog = ({ open, onClose }) => {
         password,
       });
       console.log(response.data);
+      localStorage.setItem('token', response.data.token); // Store the token in local storage
       onClose();
       navigate('/search');
     } catch (error) {

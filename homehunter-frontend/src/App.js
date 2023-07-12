@@ -9,13 +9,13 @@ import RegisterPage from './pages/RegisterPage';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#292929', // cinza
+      main: '#292929', 
     },
     secondary: {
-      main: '#1D1D1F', // cinza mais claro
+      main: '#1D1D1F', 
     },
     background: {
-      default: '#f5f5f5', // cinza muito claro para o fundo
+      default: '#f5f5f5', 
     },
   },
 });
@@ -37,3 +37,7 @@ function App() {
 }
 
 export default App;
+
+//python manage.py runserver
+// dir homehunter-frontend
+//npm start
