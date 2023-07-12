@@ -83,6 +83,9 @@ const SearchPage = () => {
     axios.get('/api/v1/offers/', { params: searchParams })
       .then(response => {
         console.log("API Response: ", response.data); // Log the full API response
+
+
+        // Test
         // const simulatedResponse = {
         //   data: {
         //     data: [
