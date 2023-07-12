@@ -4,6 +4,8 @@ This is a web application that helps users search for apartments more efficientl
 
 This project is part of the Project Factory course unit, from the Computer Engineering course at IADE, under the guidance of teacher Fábio Guilherme.
 
+Student Douglas Bewiahn - 50038630
+
 ## Features
 
 - User account creation and authentication
@@ -17,7 +19,7 @@ This project is part of the Project Factory course unit, from the Computer Engin
 - HTML
 - CSS
 - JavaScript
-- MySQL
+- React
 
 ## Development Environment Setup
 
