@@ -12,14 +12,13 @@ const SearchPage = () => {
   const [maxPrice, setMaxPrice] = React.useState(9950);
   const [results, setResults] = React.useState([]);
   const token = localStorage.getItem('token');
+  const config = {
+    headers: { 'Authorization': `Token ${token}` }
+  };
   console.log(token)
   
   React.useEffect(() => {    
-    axios.get('http://localhost:8000/api/current_user/', {
-      headers: {
-        'Authorization': `Token ${token}` // Include the token in the Authorization header
-      }
-    })
+    axios.get('http://localhost:8000/api/current_user/', config )
     .then(response => {
       setUserId(response.data.id);
     })
@@ -49,9 +48,8 @@ const SearchPage = () => {
         price_max: maxPrice,
         notify_by_phone: true,
       };
-
-
-      axios.post('http://localhost:8000/api/searches/', searchFilter)
+      
+      axios.post('http://localhost:8000/api/searches/', searchFilter, config)
         .then(response => {
           console.log("Search filter saved: ", response.data);
         })
