@@ -58,10 +58,7 @@ def is_new_apartment(apartment):
         return False
         
     
-    ##To start the task use : 
-    # redis-server (redis-cli and PING to check if is working)
-    # celery -A HomeHunter worker --loglevel=info
-    # celery -A HomeHunter beat --loglevel=info
+
 
     
 

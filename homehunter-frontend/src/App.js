@@ -38,6 +38,3 @@ function App() {
 
 export default App;
 
-//python manage.py runserver
-// dir homehunter-frontend
-//npm start

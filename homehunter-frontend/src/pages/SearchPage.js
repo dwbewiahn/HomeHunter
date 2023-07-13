@@ -80,7 +80,8 @@ const SearchPage = () => {
 
 
     // https://www.olx.pt/api/v1/offers/?offset=0&limit=40&category_id=4777&region_id=15&&sort_by=created_at:desc&filter_float_price%3Afrom=200&filter_float_price%3Ato=400
-    axios.get('/api/v1/offers/', { params: searchParams })
+    // axios.get('/api/v1/offers/', { params: searchParams }) Tentativa de usar http-proxy-middleware
+    axios.get('https://www.olx.pt/api/v1/offers/', { params: searchParams })
       .then(response => {
         console.log("API Response: ", response.data); // Log the full API response
 

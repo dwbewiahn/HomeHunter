@@ -22,7 +22,8 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'corsheaders',
-    'knox'
+    'knox',
+    'django_extensions',
     
     
 ]
