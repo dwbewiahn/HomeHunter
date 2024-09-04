@@ -2,10 +2,6 @@
 
 HomeHunter is a sophisticated web application designed to streamline and enhance the process of searching for apartments. The application empowers users to establish custom search filters and promptly notifies them when a new apartment that aligns with their filters is listed.
 
-This project is a key component of the Project Factory course unit, a part of the Computer Engineering program at IADE. The project is being developed under the expert guidance of Professor Fábio Guilherme.
-
-Project Contributor: Douglas Bewiahn - Student ID: 50038630
-
 ## Key Features
 
 - User account creation and authentication: Allows users to create their own accounts and manage their sessions securely.
